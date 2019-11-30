@@ -11,5 +11,12 @@
 
     <artifactId>stu_service_api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.qf</groupId>
+            <artifactId>stu_entity</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

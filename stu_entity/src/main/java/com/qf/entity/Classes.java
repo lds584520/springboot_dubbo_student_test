@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Teacher extends BaseEntity {
-    private  String tname;
-    private Integer cid;
+public class Classes extends BaseEntity{
+    private String cname;
+    private Integer cnum;
 }
