@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>班级信息修改</h2>
+    <form action="/cls/update" method="post">
+        <input type="hidden" name="id" th:value="${cls.id}">
+        班级名称：<input type="text" name="cname" th:value="${cls.cname}" value="姓名"><br/>
+        人数：<input type="text" name="cnum" th:value="${cls.cnum}" value="人数"><br/>
+        <input type="submit" value="修改">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>班级管理</h2>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>班级名称</td>
+            <td>人数</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="cl : ${clist}">
+            <td th:text="${cl.id}">编号</td>
+            <td th:text="${cl.cname}">班级名称</td>
+            <td th:text="${cl.cnum}">人数</td>
+            <td>
+                <a th:href="|/cls/delete?id=${cl.id}|">删除</a>|
+                <a th:href="|/cls/toUpdate?id=${cl.id}|">编辑</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/cls/toAdd"><input type="button" value="添加班级"></a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>老师管理</h2>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>受教班级</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="tl : ${tlist}">
+            <td th:text="${tl.id}">编号</td>
+            <td th:text="${tl.tname}">姓名</td>
+            <td th:text="${tl.cls.cname}">受教班级</td>
+            <td>
+                <a th:href="|/tea/delete?id=${tl.id}|">删除</a>|
+                <a th:href="|/tea/toUpdate?id=${tl.id}|">编辑</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/tea/toAdd"><input type="button" value="添加老师"></a>
+</body>
+</html>

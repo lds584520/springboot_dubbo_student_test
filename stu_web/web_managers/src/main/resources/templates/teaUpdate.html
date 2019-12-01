@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>老师信息修改</h2>
+    <form action="/tea/update" method="post">
+        <input type="hidden" name="id" th:value="${tea.id}">
+        <input type="text" name="tname" th:value="${tea.tname}" value="姓名"><br/>
+        <select name="cid">
+            <option th:text="${tea.cls.cname}" th:value="${tea.cid}"></option>
+            <option th:each="cl : ${clist}" th:value="${cl.id}" th:text="${cl.cname}"></option>
+        </select><br/>
+        <input type="submit" value="修改">
+    </form>
+</body>
+</html>
