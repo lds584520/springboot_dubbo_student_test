@@ -1,7 +1,7 @@
 package com.qf.service;
 
 import com.qf.entity.Classes;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ public interface IClsService {
 
     List<Classes> list();
 
-    Classes selectByCname(QueryWrapper queryWrapper);
+    /*Classes selectByCname(QueryWrapper queryWrapper);*/
 
     int updateById(Classes cls);
 
@@ -30,4 +30,5 @@ public interface IClsService {
     int updateByid(Classes cls);
 
 
+    Classes selectByCname(String cname);
 }

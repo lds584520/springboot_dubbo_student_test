@@ -2,7 +2,6 @@ package com.qf.serviceimpl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qf.dao.StuMapper;
 import com.qf.entity.Classes;
 import com.qf.entity.Student;
@@ -85,9 +84,8 @@ public class StuServiceImpl implements IStuService {
      */
     @Override
     public int reset(Student student, String cname) {
-        QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.eq("cname",cname);
-        Classes cls=clsService.selectByCname(queryWrapper);//根据前台传入的cname 查找对象
+
+        Classes cls=clsService.selectByCname(cname);//根据前台传入的cname 查找对象
         if(student.getCid()==cls.getId()){//如果cid相等
             return stuMapper.updateById(student);//直接修改
         }else {//如果班级id不相等

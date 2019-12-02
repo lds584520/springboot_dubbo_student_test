@@ -23,7 +23,7 @@ public class StuController {
     private IStuService stuService;
 
     @Reference
-    public IClsService clsService;
+    private IClsService clsService;
     /**
      * 显示所有学生列表
      * @param map
@@ -114,4 +114,14 @@ public class StuController {
        clsService.updateById(cls);
        return "redirect:/stu/list";
    }
+
+   /* @RequestMapping("/add")
+    public String add(Student student){
+        stuService.add(student);//先加到学生表里面
+        Classes cls = clsService.getById(student.getCid());//根据id获取班级
+        cls.setCnum(cls.getCnum()+1);
+        clsService.update(cls);//修改班级表的人数
+        return "redirect:/stu/list";
+    }*/
+
 }

@@ -29,11 +29,11 @@ public class ClsServiceImpl implements IClsService {
         return clsMapper.selectList(null);
     }
 
-    @Override
+   /* @Override
     public Classes selectByCname(QueryWrapper queryWrapper) {
 
         return clsMapper.selectOne(queryWrapper);
-    }
+    }*/
 
     /**
      * 修改新班级人数
@@ -51,18 +51,28 @@ public class ClsServiceImpl implements IClsService {
         return clsMapper.updateById(cls);
     }
 
+
+
     /**
      * 修改新班级人数
-     * @param id
+     * @param cname
      * @return
      */
    /* @Override
     public int updateByCid(Integer id) {
         return 0;
     }*/
+    @Override
+    public Classes selectByCname(String cname) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.select("cname",cname);
+        return clsMapper.selectOne(queryWrapper);
+    }
 
     @Override
     public Classes getById(Integer id) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        clsMapper.update(new Classes(),queryWrapper);
         return clsMapper.selectById(id);
     }
 
