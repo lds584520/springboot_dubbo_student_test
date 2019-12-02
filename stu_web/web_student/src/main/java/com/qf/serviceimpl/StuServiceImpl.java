@@ -107,5 +107,7 @@ public class StuServiceImpl implements IStuService {
     public int add(Student student) {
 
         return stuMapper.updateById(student);
+
+
     }
 }
