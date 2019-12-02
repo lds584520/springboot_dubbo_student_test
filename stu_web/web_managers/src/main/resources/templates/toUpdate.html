@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+</head>
+<body>
+<form action="/stu/reset" method="post">
+    <h1>修改学生</h1>
+    <input name="id" type="hidden">
+    姓名：<input name="sname" th:value="${stu.sname}"><br/>
+    年龄：<input name="age" th:value="${stu.age}"><br/>
+    所属班级：<select name="cname">
+                    <option th:each="c:${cls}"
+                            th:selected="${c.cname == stu.classes.cname}"
+                            th:value="${c.cname}"
+                            th:text="${c.cname}">
+                    </option>
+             </a></select>
+    <input type="submit" th:value="修改">
+    <input type="reset" th:value="重置">
+</form>
+</body>
+</html>

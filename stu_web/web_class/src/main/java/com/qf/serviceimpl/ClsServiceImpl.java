@@ -1,6 +1,7 @@
 package com.qf.serviceimpl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qf.dao.ClsMapper;
 import com.qf.entity.Classes;
 import com.qf.service.IClsService;
@@ -17,6 +18,48 @@ public class ClsServiceImpl implements IClsService {
 
     @Autowired
     private ClsMapper clsMapper;
+
+    @Override
+    public Classes queryById(Integer cid) {
+        return clsMapper.selectById(cid);
+    }
+
+    @Override
+    public List<Classes> list() {
+        return clsMapper.selectList(null);
+    }
+
+    @Override
+    public Classes selectByCname(QueryWrapper queryWrapper) {
+
+        return clsMapper.selectOne(queryWrapper);
+    }
+
+    /**
+     * 修改新班级人数
+     * @param cls
+     * @return
+     */
+   /* @Override
+    public int updateById(Integer cid,Integer cnum) {
+        UpdateWrapper updateWrapper=new UpdateWrapper();
+        updateWrapper.eq("cnum",cnum);
+        return clsMapper.update(cid,updateWrapper);
+    }*/
+    @Override
+    public int updateByid(Classes cls) {
+        return clsMapper.updateById(cls);
+    }
+
+    /**
+     * 修改新班级人数
+     * @param id
+     * @return
+     */
+   /* @Override
+    public int updateByCid(Integer id) {
+        return 0;
+    }*/
 
     @Override
     public Classes getById(Integer id) {
@@ -42,4 +85,16 @@ public class ClsServiceImpl implements IClsService {
     public int add(Classes classes) {
         return clsMapper.insert(classes);
     }
+
+    /**
+     * 修改班级信息
+     * @param cls
+     * @return
+     */
+    @Override
+    public int updateById(Classes cls) {
+        return clsMapper.updateById(cls);
+    }
+
+
 }

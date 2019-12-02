@@ -1,6 +1,6 @@
 dubbo:
   registry:
-    address: zookeeper://192.168.88.250:2181
+    address: zookeeper://192.168.64.111:2181
   application:
     name: stu-service
   protocol:
