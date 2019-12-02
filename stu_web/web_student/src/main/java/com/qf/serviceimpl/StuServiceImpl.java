@@ -30,14 +30,10 @@ public class StuServiceImpl implements IStuService {
      */
     @Override
     public List<Student> list() {
-
         List<Student> list=stuMapper.selectList(null);
-
         for(Student student:list) {
             Integer cid=student.getCid();
-
             Classes cls=clsService.queryById(cid);
-
             student.setClasses(cls);
         }
         return list;

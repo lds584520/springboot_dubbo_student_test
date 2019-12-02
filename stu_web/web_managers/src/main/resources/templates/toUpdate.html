@@ -7,7 +7,8 @@
 <body>
 <form action="/stu/reset" method="post">
     <h1>修改学生</h1>
-    <input name="id" type="hidden">
+    <input name="id" type="hidden" th:value="${stu.id}">
+    <input name="cid" type="hidden" th:value="${stu.cid}">
     姓名：<input name="sname" th:value="${stu.sname}"><br/>
     年龄：<input name="age" th:value="${stu.age}"><br/>
     所属班级：<select name="cname">
@@ -16,7 +17,7 @@
                             th:value="${c.cname}"
                             th:text="${c.cname}">
                     </option>
-             </a></select>
+             </select>
     <input type="submit" th:value="修改">
     <input type="reset" th:value="重置">
 </form>

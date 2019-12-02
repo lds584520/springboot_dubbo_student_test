@@ -65,7 +65,7 @@ public class ClsServiceImpl implements IClsService {
     @Override
     public Classes selectByCname(String cname) {
         QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.select("cname",cname);
+        queryWrapper.eq("cname",cname);
         return clsMapper.selectOne(queryWrapper);
     }
 

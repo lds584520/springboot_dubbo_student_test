@@ -35,7 +35,7 @@ public class StuController {
         List<Student> list =stuService.list();
 
         map.addAttribute("stus",list);
-
+        System.out.println(list);
         return "stulist";
     }
 
